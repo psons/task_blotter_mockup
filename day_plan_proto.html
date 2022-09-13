@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel=stylesheet href="css/resetpgs.css">
+    <link rel="stylesheet" href="css/t_blotter.css">
+    <title>Day Plan</title>
+</head>
+<body>
+<div class="app">
+    <div class="day_bar">
+        <div class="sprint_panel">
+            <div class="label_val_pair">
+                <span class="sprint_tasks setting_label">Plan Tasks: </span>
+                <span class="setting_value">6</span>
+            </div>
+            <!-- in this mock up, the first E shows 3 tasks, the second shows 2,
+            and third endeavor allows 2, but only shows 1 because it is below the day capacity.
+            If we had 4 columns in the grid, it would not show any tasks, per sprint_tasks -->
+            <div class="label_val_pair">
+                <span class="sprint_endeavors setting_label">Endeavors: </span>
+                <span class="setting_value">3</span>
+            </div>
+        </div>
+        <header class="screen_title">Day Sprint Plan</header>
+        <div class="menu_bar">
+            <div class="menu_choice left_tab">Execute</div>  <!-- Tool tip for: Execute Tasks on the blotter-->
+            <div class="menu_choice mid_tab">Sprint</div> <!-- Tool tip for: Sprint Blotter Commitment-->
+            <div class="menu_choice right_tab">Endeavor</div>  <!-- Tool tip for: Endeavor Story Planning-->
+        </div>
+    </div>
+    <div class="task_grid">
+        <!-- Endeavors are columns.  Stories are rows in each column.-->
+        <!-- Start with fixed size of 6 tasks from within the stories and 3 Endeavor columns-->
+        <!-- Top level react component will have to build task list based on stories and set a prop on the task
+        to manage the story_sep
+        -->
+        <!-- need to figure out Footer Nav choices if tasks do not all fit in grid rows-->
+        <!-- E1 -->
+        <div class="endeavor">
+            <div class="endeavor_head_bar" >
+                <div class="endeavor_tasks_setting_value">3</div>
+                <p class="endeavor_name">Endeavor Number 1 with some more text to wrap in a column, maybe even twice.</p>
+                <p class="endeavor_tasks_label">Endeavor Tasks</p>
+            </div>
+            <div class="task_list tasks_list_endeavor_in_sprint">
+                <!-- begin E1 Story component 1 -->
+                <div class="sep sep_story"> E1 Story 1 beginning. May not have any visible content other than a graphical cue until the user mouses over the element</div>
+                <div class="task">
+                    <div class="task_status"> d </div>
+                    <p class="task_head"> Head 1, 1, 1 </p>
+                    <p class="task_body"> Body for E1, S1, T1 Is potentially many lines and may wrap again and again, depending on column width</p>
+                </div>
+                <div class="task">
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E1, S1, T2 </div>
+                    <div class="task_body"> Body for E1, S1, T2 Some more lines in this task, potentially needed to capture rich detail about what to do.</div>
+                </div>
+                <!-- begin E1 Story component 2 -->
+                <div class="sep sep_story"> E1 Story 2 beginning. May not have visible content.</div>
+                <div class="task">
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E1, S2, T1 </div>
+                    <div class="task_body"> Body for E1, S2, T1.  Not all tasks have a lot of body text.</div>
+                </div>
+            </div>
+            <div class="task_list tasks_list_endeavor_out_of_sprint">
+                <div class="task first_task_out"> <!--  num endeavor tasks conditionally applied class to make this grey below the line -->
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E1, S2, T2 </div>
+                    <div class="task_body"> Body for E1, S2, T2.  This task should show small or light or grey because it is the first task that is below the cut off for the endeavor. </div>
+                </div>
+                <!-- begin E1 Story component 3 -->
+                <div class="sep sep_story"> E1 Story 3 beginning. May not have visible content.</div>
+                <div class="task additional_task_out"> <!-- conditionally applied class to make this invisible below the line -->
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E1, S3, T1 </div>
+                    <div class="task_body"> Body for E1, S3, T1.  Some tasks little body text.</div>
+                </div>
+                <div class="task additional_task_out">
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E1, S3, T2 </div>
+                    <div class="task_body"> Body for E1, S3, T2.  Another tasks little body text.</div>
+                </div>
+            </div>
+            <div class="endeavor_footer">
+                <div class="show_endeavor_editor">Edit Endeavor</div>
+            </div>
+        </div> <!-- End of Endeavor 1 -->
+        <!-- E2 -->
+        <!-- This endeavor mocks up a case where some tasks are below the active cutoff for the Endeavor.
+        The line falls on a story boundary. -->
+        <div class="endeavor">
+            <div class="endeavor_head_bar" >
+                <div class="endeavor_tasks_setting_value">2</div>
+                <p class="endeavor_name">Endeavor Number 2</p>
+                <p class="endeavor_tasks_label">Endeavor Tasks</p>
+            </div>
+            <div class="task_list tasks_list_endeavor_in_sprint">
+                <!-- begin E2 Story component 1 -->
+                <div class="sep sep_story"> E2 Story 1 beginning. May not have any visible content other than a graphical cue until the user mouses over the element </div>
+                <div class="task">
+                    <div class="task_status"> d </div>
+                    <p class="task_head"> Headline for E2, S1, T1 is excessively long </p>
+                    <p class="task_body"> Body for E2, S1, T1 Is potentially many lines and may wrap again and again, depending on column width</p>
+                </div>
+                <div class="task">
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E2, S1, T2 </div>
+                    <div class="task_body"> Body for E2, S1, T2 Some more lines in this task, potentially needed to capture rich detail about what to do.</div>
+                </div>
+                <!-- begin E2 Story component 2 -->
+            </div>
+            <div class="task_list tasks_list_endeavor_out_of_sprint">
+                <div class="sep sep_story"> E2 Story 2 beginning.    </div>
+                <div class="task first_task_out"> <!-- num endeavor tasks conditionally applied class to make this grey below the line -->
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E2, S2, T1 </div>
+                    <div class="task_body"> Body for E2, S2, T1.  Not all tasks have a lot of body text.</div>
+                </div>
+                <div class="task additional_task_out"> <!-- conditionally applied class to make this invisible below the line -->
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E2, S2, T2 </div>
+                    <div class="task_body"> Body for E2, S2, T2.  This task should be invisible. Below the cut off for the endeavor. </div>
+                </div>
+                <!-- begin E1 Story component 3 -->
+                <div class="sep sep_story"> E2 Story 3 beginning. May not have visible content.</div>
+                <div class="task additional_task_out" >
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E2, S3, T1 </div>
+                    <div class="task_body"> Body for E2, S3, T1.  Some tasks little body text.</div>
+                </div>
+                <div class="task additional_task_out">
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S3, T2 </div>
+                    <div class="task_body"> Body for E3, S3, T2.  This task should be invisible. Below the cut off for the endeavor.  </div>
+                </div>
+            </div>
+            <div class="endeavor_footer">
+                <div class="show_endeavor_editor">Edit Endeavor</div>
+            </div>
+        </div> <!-- End of Endeavor 2 -->
+        <!-- E3 -->
+        <!-- This endeavor mocks up a case where some tasks are below the sprint, even if they would be active in the endeavor.
+        A story is split based on the above
+        -->
+        <div class="endeavor">
+            <div class="endeavor_head_bar" >
+                <div class="endeavor_tasks_setting_value">2</div>
+                <p class="endeavor_name">Endeavor Number 3</p>
+                <p class="endeavor_tasks_label">Endeavor Tasks</p>
+            </div>
+            <div class="task_list tasks_list_endeavor_in_sprint">
+                <!-- begin E3 Story component 1: partial because some tasks are out of sprint -->
+                <div class="sep sep_story"> E3 Story 1 beginning. May not have any visible content other than a graphical cue until the user mouses over the element </div>
+                <div class="task">
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S1, T1 </div>
+                    <div class="task_body"> Body for E3, S1, T1 Is potentially many lines and may wrap again and again, depending on column width</div>
+                </div>
+                <!-- in sprint split point on E3 Story 1 -->
+                <div class="sep sep_sprint_end">Tasks after this are beyond MaxTasks:</div>
+                <div class="task first_task_out"> <!-- num !sprint! tasks conditionally applied class to make this grey below the line -->
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S1, T2 </div>
+                    <div class="task_body"> Body for E3, S1, T2 Some more lines in this task, potentially needed to capture rich detail about what to do.</div>
+                </div>
+            </div>
+            <div class="task_list tasks_list_endeavor_out_of_sprint">
+                <!-- out of sprint split of E3 Story 1 -->
+                <div class="sep sep_story"> E3 Story 2 fragment below the line, May not have any visible content other than a graphical cue until the user mouses over the element </div>
+                <div class="task additional_task_out"> <!-- num !sprint! tasks conditionally applied class to make this grey below the line -->
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S1, T2 </div>
+                    <div class="task_body"> Body for E3, S1, T2 Some more lines in this task, potentially needed to capture rich detail about what to do.</div>
+                </div>
+                <!-- begin E2 Story component 2 -->
+                <div class="sep sep_story"> E3 Story 2 beginning. May not have visible content.</div>
+                <div class="task additional_task_out"> <!-- conditionally applied class to make this invisible below the line -->
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S2, T1 </div>
+                    <div class="task_body"> Body for E3, S2, T1.  Not all tasks have a lot of body text.</div>
+                </div>
+                <div class="task additional_task_out" >
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S2, T2 </div>
+                    <div class="task_body"> Body for E3, S2, T2.  This task should be invisible because it is below the line for both the endeavor and the sprint. </div>
+                </div>
+                <!-- begin E3 Story component 3 -->
+                <div class="sep sep_story"> E3 Story 3 beginning. May not have visible content.</div>
+                <div class="task additional_task_out" >
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S3, T1 </div>
+                    <div class="task_body"> Body for E3, S3, T1.  Some tasks little body text.</div>
+                </div>
+                <div class="task additional_task_out">
+                    <div class="task_status"> d </div>
+                    <div class="task_head"> Headline for E3, S3, T2 </div>
+                    <div class="task_body"> Body for E3, S3, T2.  This task should be invisible because it is below the line for both the endeavor and the sprint. </div>
+                </div>
+            </div>
+            <div class="endeavor_footer">
+                <div class="show_endeavor_editor">Edit Endeavor</div>
+            </div>
+        </div> <!-- End of Endeavor 3 -->
+    </div>
+</div>
+</body>
+</html>
