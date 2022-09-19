@@ -2,15 +2,13 @@
     --endeavor_task_color: #162882;
     --sprint_task_color: #8f97bd;
     --passive_color: lightgray;
+    --prompt_background: #69618b;
+    --prompt_color: #bfcde2;
+
 }
 
-.app {
-    border solid orange 1em;
-    padding: .7em;
-    width: 5in;
-}
 
-.day_bar {
+.top_bar {
     display: grid;
     grid-template: auto auto / 1fr 1fr 1fr ;
     /*grid-template:*/
@@ -33,9 +31,10 @@
 
 }
 
-.sprint_panel {
-    /*grid-area: a;*/
-    /*height: 6em;*/
+
+
+
+.statistics_panel {
     grid-row-start: 1;
     grid-column-start: 1;
     grid-row-end: 3;
@@ -44,6 +43,7 @@
     background-color: var(--passive_color);
     /*border: solid var(--passive_color) .2em;*/
     border: solid white .1em;
+    /*border: solid red .1em;*/
     padding: 0;
     /*border-radius: .4em;*/
     /*margin: 0 .1em 0 .1em;*/
@@ -145,10 +145,34 @@
 
 .endeavor_head_bar {
     /*border: solid .15em red  ;*/
+    height: 3em;
     background-color: var(--endeavor_task_color);
     color: white;
     border: solid white .1em;
     margin: 0;
+}
+
+.endeavor_head_bar_new {
+    border: solid .15em red  ;
+    /*margin: auto;*/
+    height: 3em;
+    padding: 0; /* 1em top  manually vert center content */
+    color: var(--prompt_color);
+    border: solid white .1em;
+    background-color: var(--prompt_color);
+    margin: 0;
+}
+
+.endeavor_name_prompt {
+    /*height: 3em;*/
+    background-color: var(--prompt_background);
+    border: solid .5em var(--prompt_color);
+    /*overflow: hidden;*/
+    padding: .5em;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: lighter;
+    font-style: italic;
 }
 
 .endeavor_name {
@@ -217,6 +241,12 @@
     height: 3px;
     color: var(--passive_color);
 }
+
+.story {
+    height: 3em;
+    color: var(--endeavor_task_color);
+}
+
 
 /*.sep_story>p {*/
 /*display: none;*/

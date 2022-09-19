@@ -1,0 +1,28 @@
+<h1>Task Blotter UI</h1>
+<h2>Day planning view</h2>
+<p>Given a prioritized colection of endeavors,
+which are prioritized collections of stories
+which are prioritized collections of tasks,</p>
+<p>Allow the user to see the tasks drawn from the endeavors in prioritized order with the flexability to 
+ - manipulate the number of tasks drawn from an endeavor :ndev_tasks
+ - manipulate the total number of tasks drawn for the day sprint :day_tasks
+ :- with the consequence that endeavors below the highest contribute tasks to the day sprint if the day_tasks is larger than the sum of the ndev_tasks dor all higher endeavors.
+ :- with the consequence that large :ndev_tasks for the top endeavor causes focus on that endeavor</p>
+<h3>the assumption is that that the task user will focus on highest priority, but may be collaboratively blocked briefly on high priority tasks or need to keep additional endeavors active during the day.</h3>
+<h1>design issue</h1>
+<p>In theory a story or task may not further more than 1 endeavor.   To require endeavors to be non-overlapping is to force too much discipline, or to force some awkward organization of tasks.  In an ideal state, a task could have a priority in more than 1 story or Endeavor, and the overall priority either time bound or mission based.
+ - if priority is is time based, it has the priority of it's highest priority story.
+ - if it is mission based, it has the sum of the priorities to reflect that it has extra value.</p>
+<h1>Goal Setting View</h1>
+<h2>Given an empty blotter,</h2>
+<ul>
+<li>create an endeavor</li>
+<li>create a story in an endeavor.</li>
+<li>create a task in a story in an endeavor.</li>
+<li>change a task to a different status.</li>
+<li>re-order tasks within a Story.</li>
+<li>re-order stories within an endeavor.</li>
+<li>re-order endeavors withhin a domain.</li>
+<li>re-order stories wthin an endeavor.</li>
+<li>re-order tasks within an endeavor.</li>
+</ul>
